@@ -16,6 +16,20 @@ export type TicketType = {
 
 export type InitialStateType = {
     tickets: TicketType[];
+    currency: string;
+    stopsQuantity: StopsQtyType[];
 }
 
 export type State = ReturnType<typeof store.getState>;
+
+export type AppDispatch = typeof store.dispatch;
+
+export type StopsQtyType = 0 | 1 | 2 | 3 | undefined ;
+
+export type TransferQuantityType = {
+    all: StopsQtyType;
+    noStops: StopsQtyType;
+    oneStop: StopsQtyType;
+    twoStops: StopsQtyType;
+    threeStops: StopsQtyType;
+}
