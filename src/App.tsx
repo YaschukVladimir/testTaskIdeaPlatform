@@ -16,7 +16,6 @@ function App() {
       resultArr = [];
       choosenStops.forEach((stop) => {
         const result = tickets.filter((ticket) => ticket.stops === stop);
-        console.log(result, 'res');
         resultArr = [...resultArr, ...result]
       });
     } 

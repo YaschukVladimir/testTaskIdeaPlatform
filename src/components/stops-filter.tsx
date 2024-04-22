@@ -4,20 +4,16 @@ import { useAppDispatch } from "../hooks/use-app-dispatch";
 import { setStopsQuantity } from "../store/app-slice";
 import { stopsLabel } from "../utils";
 
-
 type StopsFilterPropsType = {
     stop: StopsQtyType;
 }
 
 function StopsFilter({stop}: StopsFilterPropsType): React.JSX.Element {
-    const choosenStops = useSelector((state: State) => state.appSlice.stopsQuantity);
+    const choosenStops = useSelector((state: State):StopsQtyType[] => state.appSlice.stopsQuantity);
     const dispatch = useAppDispatch();
     const handleSetStops = (stopQty: StopsQtyType): void => {
         dispatch(setStopsQuantity(stopQty))
     };
-
-   
-
     const isChecked = choosenStops.includes(stop) || choosenStops.length === 4;
 
     return (
