@@ -54,7 +54,9 @@ export const prepareString = (stops: number): string => {
     switch (stops) {
         case 1:
             return `${stops} пересадка`;
-        case 2 || 3 || 4:
+        case 2:
+            return `${stops} пересадки`;
+        case 3:
             return `${stops} пересадки`;
         case 0:
             return `без пересадок`;
