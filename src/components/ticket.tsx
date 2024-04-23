@@ -24,7 +24,7 @@ function Ticket ({ticket}: TicketPropsType):React.JSX.Element {
         <li className="list__item ticket">
             <div className="list__item-main">
                 <div className="list__item-icon">
-                    <img src={`/src/mock-data/images/${carrier}.png`} alt="icon" width="80px" height="50px"/>
+                    <img src={`/images/${carrier}.png`} alt="icon" width="80px" height="50px"/>
                 </div>
                 <button className="list__item-button">{`Купить за ${preparedPrice(currency, price)}`}</button>
             </div>
@@ -36,7 +36,7 @@ function Ticket ({ticket}: TicketPropsType):React.JSX.Element {
                 </div>
                 <div className="list__item-transfers">{prepareString(stops)}
                     <div className="list__item-plane-icon">
-                        <img src="/src/mock-data/images/airplane_icon_126136.png" width="24px" height="18px" ></img>
+                        <img src="/images/airplane_icon_126136.png" width="24px" height="18px" ></img>
                     </div>
                 </div>
                 <div className="list__item-arrivals">

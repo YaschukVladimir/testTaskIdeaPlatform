@@ -1,12 +1,9 @@
-
-
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color: #302828;
-  background-color: #F0F0F0;
-
+  background-color: #E2F1FC;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -25,9 +22,9 @@ ul {
   padding-top: 120px;
   display: flex;
   justify-content: center;
-  background-color: #E2F1FC;
   gap: 20px;
   box-sizing: border-box;
+  height: 100%;
 
   @media screen and (max-width: 1024px) {
     flex-direction: column;
@@ -42,6 +39,7 @@ ul {
   display: flex;
   flex-direction: column;
   align-self: flex-start;
+  min-width: 250px;
 
   @media screen and (max-width: 1024px) {
     flex-grow: 1;
@@ -52,7 +50,7 @@ ul {
   &__wrapper {
     display: flex;
     flex-direction: column;
-    padding: 16px;
+    padding: 16px 0;
     gap: 20px;
 
     @media screen and (max-width: 1024px) {
@@ -62,13 +60,19 @@ ul {
   }
 
   &__fieldset {
-    border: none;
+        border: none;
+        padding: 8px 0; 
+        margin: 0;
+  }
+
+  &__fieldset legend {
+    padding-left: 16px;
   }
 
   &__currency-wrapper {
     display: flex;
     border-radius: 4px;
-    border: 1px solid #E2F1FC;
+    padding: 0 16px 0 16px;
   }
 
   &__currency {
@@ -91,13 +95,18 @@ ul {
   }
 
   &__input-wrapper {
-    margin-bottom: 8px;
+    padding: 4px 16px 4px 16px;
+    transition: 0.3s linear;
   }
 
   &__input-wrapper:hover {
     background-color: #89C5F5;
     color: #FFF;
     cursor: pointer;
+  }
+
+  &__input-wrapper:hover .filters__input-checkbox {
+    border: 2px solid #FFF
   }
 
   &__input-checkbox {
@@ -127,6 +136,11 @@ ul {
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
     display: block;
+  }
+
+  &__input-wrapper:hover .filters__input-checkbox.checked::after {
+    border: solid  #FFF;
+    border-width: 0 2px 2px 0;
   }
 
   &__input-custom {
